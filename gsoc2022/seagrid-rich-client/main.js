@@ -89,6 +89,26 @@ function createVMD(){
       console.log(data.toString());
   });
 }
+function createMultiwfn(){
+  
+  var homedir = process.env.HOME;
+  if(os.platform == 'win32')
+  {
+  console.log("win32")
+  var executablePath = 'C:\\Users\\aishw\\airavata-sandbox\\gsoc2022\\seagrid-rich-client\\Multiwfn_3.7_bin_Win32.\\Multiwfn.exe';
+  console.log(executablePath)
+  }
+  else
+  {
+    var executablePath = homedir + '/Applications/Multiwfn_3.7_src_Mac/Multiwfn';
+  }
+    
+  child(executablePath, function (err, data) {
+      console.log("error")
+      console.log(err)
+      console.log(data.toString());
+  });
+}
 
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
@@ -145,6 +165,12 @@ app.whenReady().then(() => {
         label: 'VMD',
         click: (item, focusedWindow) => {
           createVMD()
+        }
+      },
+      {
+        label: 'Multiwfn',
+        click: (item, focusedWindow) => {
+          createMultiwfn()
         }
       }
     ]
