@@ -90,12 +90,25 @@ function createVMD(){
   });
 }
 function createMultiwfn(){
-  
-  var homedir = process.env.HOME;
+  const { spawn } = require('node:child_process');
+  const bat = spawn('cmd.exe', ['/c', 'test.bat']);
+
+  bat.stdout.on('data', (data) => {
+  console.log(data.toString());
+  });
+
+  bat.stderr.on('data', (data) => {
+  console.error(data.toString());
+  });
+
+  bat.on('exit', (code) => {
+  console.log(`Child exited with code ${code}`);
+  });
+  /*var homedir = process.env.HOME;
   if(os.platform == 'win32')
   {
   console.log("win32")
-  var executablePath = 'C:\\Users\\aishw\\airavata-sandbox\\gsoc2022\\seagrid-rich-client\\Multiwfn_3.7_bin_Win32.\\Multiwfn.exe';
+  var executablePath = 'C:\\Users\\aishw\\airavata-sandbox\\gsoc2022\\seagrid-rich-client\\Multiwfn_3.7_bin_Win32\\Multiwfn.exe';
   console.log(executablePath)
   }
   else
@@ -107,7 +120,7 @@ function createMultiwfn(){
       console.log("error")
       console.log(err)
       console.log(data.toString());
-  });
+  });*/
 }
 
 // This method will be called when Electron has finished
