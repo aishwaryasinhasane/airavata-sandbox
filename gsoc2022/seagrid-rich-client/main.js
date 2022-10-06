@@ -90,9 +90,13 @@ function createVMD(){
   });
 }
 function createMultiwfn(){
+  var homedir = process.env.HOME;
   const { spawn } = require('node:child_process');
-  const bat = spawn('cmd.exe', ['/c', 'test.bat']);
 
+  if(os.platform == 'win32')
+  {
+  
+  const bat = spawn('cmd.exe', ['/c', 'test.bat']);
   bat.stdout.on('data', (data) => {
   console.log(data.toString());
   });
@@ -104,7 +108,18 @@ function createMultiwfn(){
   bat.on('exit', (code) => {
   console.log(`Child exited with code ${code}`);
   });
-  /*var homedir = process.env.HOME;
+  }
+  else{
+    var executablePath = homedir + '/Applications/Multiwfn_3.7_src_Mac/Multiwfn';
+    child(executablePath, function (err, data) {
+      console.log("error")
+      console.log(err)
+      console.log(data.toString());
+  });
+
+  }
+  
+  /*
   if(os.platform == 'win32')
   {
   console.log("win32")
