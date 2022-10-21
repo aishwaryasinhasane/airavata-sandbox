@@ -26,6 +26,13 @@
 #### Run Application
 1. Clone the repository. 
 2. Run below command 
+
+- cd molview_lite
+- Make sure NPM and Bower are installed
+- Download JSmol from 1 and copy the j2s root into jmol/j2s.
+- Run npm install
+- Run bower install
+- Run grunt
    
    - npm start
 3. This will launch the application 
