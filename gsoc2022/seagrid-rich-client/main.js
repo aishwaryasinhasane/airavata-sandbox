@@ -62,8 +62,8 @@ function createMol3DWindow(){
       preload: path.join(__dirname, 'preload.js')
     }
   })
-  
-  Mol3DWindow.loadURL("https://molview.org/")
+  Mol3DWindow.loadFile(".\\molview_lite\\index.html")
+  //Mol3DWindow.loadURL("https://molview.org/")
 }
 function createAvogadro(){
     
@@ -77,8 +77,38 @@ function createAvogadro(){
             console.log(data.toString());
     });
 }
+function templateinput(){
+  const fs = require('fs')
+  var gaussstr = "%nproc=24 \n%mem=2000MB \n%Chk=neopentane13diol \n#P RB3LYP/cc-pVDZ Pop=(Reg) GFInput GFPrint Iop(6/7=3) Opt Freq \n \nneopentane13diol #P RB3LYP/cc-pVDZ Pop=(Reg) GFInput GFPrint Iop(6/7=3) Opt Freq \n \n0 1";
+  fs.appendFile('input.gjf', gaussstr+"\n", function (err) {
+    if (err) throw err
+  });
+  fs.readFile('C:\\Users\\aishw\\Downloads\\MolView.mol', (err, inputD) => {
+   if (err) throw err;
+      var words = inputD.toString().split("\n")
+      var arr = words[3].split(" ")
+      var atomlen = parseInt(arr[1])
+      for(var i = 4; i<28; i++)
+      {
+        var arrwords = new Array();
+        arrwords = words[i].split(" ");
+        //console.log(arrwords);
+        var size = arrwords.length;
+        for(var j = 0;j<size; j++)
+        {
+          if(arrwords[j]=="") {
+            arrwords.splice(j,1);
+            j--; // Prevent skipping an item
+        }
+        }
+        fs.appendFile('input.gjf', arrwords[3] + " "+ arrwords[0] + " "+ arrwords[1] + " "+ arrwords[2] + "\n", function (err) {
+          if (err) throw err
+        });
+        
+      }  
+  })
+}
 function createVMD(){
-  
   var homedir = process.env.HOME;
   if(os.platform == 'win32')
     var executablePath = 'C:\\Program Files\\VMD\\vmd.exe';
@@ -181,6 +211,17 @@ app.whenReady().then(() => {
     ]
   });
   menu.splice(3,0,{
+    label: 'Template Input',
+    submenu: [
+      {
+        label: 'Gaussian Input',
+        click: (item, focusedWindow) => {
+          templateinput()
+        }
+      }
+    ]
+  });
+  menu.splice(4,0,{
     label: 'External Applications',
     submenu: [
       {
@@ -216,3 +257,4 @@ app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
 
+///Users/spamidig/Applications/Multiwfn_3.7_src_Mac/Multiwfn /Users/spamidig/Applications/Multiwfn_3.7_bin_Mac/examples/benzene.wfn < ins.txt
