@@ -1,0 +1,60 @@
+syntax="proto3";
+package molecule;
+import "google/protobuf/struct.proto";
+
+message Molecule {
+  optional string id = 1;
+  optional string doi = 2;
+  optional string published_date = 3;
+  optional string title = 4;
+}
+
+message CreateMoleculeRequest{
+  Molecule molecule = 1;
+}
+message CreateMoleculeResponse{
+  Molecule molecule = 1;
+}
+
+message ReadMoleculeRequest{
+  string id = 1;
+}
+message ReadMoleculeResponse{
+  Molecule molecule = 1;
+}
+
+message UpdateMoleculeRequest{
+  Molecule molecule = 1;
+}
+message UpdateMoleculeResponse{
+  Molecule molecule = 1;
+}
+
+message DeleteMoleculeRequest{
+  string molecule_id = 1;
+}
+message DeleteMoleculeResponse{
+  string molecule_id = 1;
+}
+
+message ListMoleculeRequest{
+}
+
+message ListMoleculeResponse{
+  Molecule molecule = 1;
+}
+
+message GetMoleculeRequest{
+  
+}
+
+service MoleculeService{
+  rpc CreateMolecule(CreateMoleculeRequest) returns (CreateMoleculeResponse){};
+  rpc ReadMolecule(ReadMoleculeRequest) returns (ReadMoleculeResponse){};
+  rpc UpdateMolecule(UpdateMoleculeRequest) returns (UpdateMoleculeResponse){};
+  rpc DeleteMolecule(DeleteMoleculeRequest) returns (DeleteMoleculeResponse){};
+  rpc ListMolecule(ListMoleculeRequest) returns (ListMoleculeResponse){};
+  rpc GetMolecule(GetMoleculeRequest) returns (google.protobuf.Struct){};
+}
+
+//  python -m grpc_tools.protoc --proto_path=./ --python_out=./ --grpc_python_out=./ ./molecule.proto
