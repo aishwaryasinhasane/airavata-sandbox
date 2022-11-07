@@ -78,35 +78,16 @@ function createAvogadro(){
     });
 }
 function templateinput(){
-  const fs = require('fs')
-  var gaussstr = "%nproc=24 \n%mem=2000MB \n%Chk=neopentane13diol \n#P RB3LYP/cc-pVDZ Pop=(Reg) GFInput GFPrint Iop(6/7=3) Opt Freq \n \nneopentane13diol #P RB3LYP/cc-pVDZ Pop=(Reg) GFInput GFPrint Iop(6/7=3) Opt Freq \n \n0 1";
-  fs.appendFile('input.gjf', gaussstr+"\n", function (err) {
-    if (err) throw err
-  });
-  fs.readFile('C:\\Users\\aishw\\Downloads\\MolView.mol', (err, inputD) => {
-   if (err) throw err;
-      var words = inputD.toString().split("\n")
-      var arr = words[3].split(" ")
-      var atomlen = parseInt(arr[1])
-      for(var i = 4; i<28; i++)
-      {
-        var arrwords = new Array();
-        arrwords = words[i].split(" ");
-        //console.log(arrwords);
-        var size = arrwords.length;
-        for(var j = 0;j<size; j++)
-        {
-          if(arrwords[j]=="") {
-            arrwords.splice(j,1);
-            j--; // Prevent skipping an item
-        }
-        }
-        fs.appendFile('input.gjf', arrwords[3] + " "+ arrwords[0] + " "+ arrwords[1] + " "+ arrwords[2] + "\n", function (err) {
-          if (err) throw err
-        });
-        
-      }  
+  const gaussianWindow = new BrowserWindow({
+    width: 800,
+    height: 600,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js')
+    }
   })
+
+  // and load the login page for app
+  gaussianWindow.loadURL("https://seagrid.org/workspace/applications/Gaussian16_3e749c7d-6b02-4356-acc3-a58423210bda/create_experiment")
 }
 function createVMD(){
   var homedir = process.env.HOME;
@@ -211,10 +192,10 @@ app.whenReady().then(() => {
     ]
   });
   menu.splice(3,0,{
-    label: 'Template Input',
+    label: 'Create Experiment',
     submenu: [
       {
-        label: 'Gaussian Input',
+        label: 'Gaussian 16',
         click: (item, focusedWindow) => {
           templateinput()
         }
