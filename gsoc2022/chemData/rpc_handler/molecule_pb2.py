@@ -15,7 +15,7 @@ _sym_db = _symbol_database.Default()
 from google.protobuf import struct_pb2 as google_dot_protobuf_dot_struct__pb2
 
 
-DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0emolecule.proto\x12\x08molecule\x1a\x1cgoogle/protobuf/struct.proto\"\xbe\x14\n\x08Molecule\x12\x13\n\x06mol_id\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x13\n\x06\x63\x61s_nr\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x13\n\x06smiles\x18\x03 \x01(\tH\x02\x88\x01\x01\x12\x1a\n\rsmiles_stereo\x18\x04 \x01(\tH\x03\x88\x01\x01\x12\x12\n\x05inchi\x18\x05 \x01(\tH\x04\x88\x01\x01\x12 \n\x13molfile_blob_source\x18\x06 \x01(\tH\x05\x88\x01\x01\x12\x18\n\x0b\x65mp_formula\x18\x07 \x01(\tH\x06\x88\x01\x01\x12\x1d\n\x10\x65mp_formula_sort\x18\x08 \x01(\tH\x07\x88\x01\x01\x12\x1f\n\x12\x65mp_formula_source\x18\t \x01(\tH\x08\x88\x01\x01\x12\x0f\n\x02mw\x18\n \x01(\x01H\t\x88\x01\x01\x12\x17\n\nmw_monoiso\x18\x0b \x01(\x01H\n\x88\x01\x01\x12\x10\n\x03rdb\x18\x0c \x01(\x01H\x0b\x88\x01\x01\x12\x16\n\tmw_source\x18\r \x01(\tH\x0c\x88\x01\x01\x12\x19\n\x0cvalidated_by\x18\x0e \x01(\tH\r\x88\x01\x01\x12\x14\n\x07journal\x18\x0f \x01(\tH\x0e\x88\x01\x01\x12\x19\n\x0c\x61uth_of_intr\x18\x10 \x01(\tH\x0f\x88\x01\x01\x12\x15\n\x08jour_cit\x18\x11 \x01(\tH\x10\x88\x01\x01\x12\x16\n\tyear_publ\x18\x12 \x01(\tH\x11\x88\x01\x01\x12\x15\n\x08\x64oi_link\x18\x13 \x01(\tH\x12\x88\x01\x01\x12\x17\n\ncomp_class\x18\x14 \x01(\tH\x13\x88\x01\x01\x12\x12\n\x05\x63uniq\x18\x15 \x01(\tH\x14\x88\x01\x01\x12\x16\n\tcalc_perf\x18\x16 \x01(\tH\x15\x88\x01\x01\x12\x14\n\x07org_met\x18\x17 \x01(\tH\x16\x88\x01\x01\x12\x15\n\x08mol_chrg\x18\x18 \x01(\x03H\x17\x88\x01\x01\x12\x18\n\x0bstate_ofmat\x18\x19 \x01(\tH\x18\x88\x01\x01\x12\x18\n\x0b\x63olor_white\x18\x1a \x01(\tH\x19\x88\x01\x01\x12\x15\n\x08\x63olor_uv\x18\x1b \x01(\tH\x1a\x88\x01\x01\x12\x17\n\nabsorb_max\x18\x1c \x01(\x01H\x1b\x88\x01\x01\x12\x17\n\nsolvent_ae\x18\x1d \x01(\tH\x1c\x88\x01\x01\x12\x13\n\x06\x61\x62sorb\x18\x1e \x01(\x01H\x1d\x88\x01\x01\x12\x11\n\x04\x63onc\x18\x1f \x01(\x01H\x1e\x88\x01\x01\x12\x13\n\x06\x65xtinc\x18  \x01(\x01H\x1f\x88\x01\x01\x12\x15\n\x08\x65mis_max\x18! \x01(\x01H \x88\x01\x01\x12\x15\n\x08temp_abs\x18\" \x01(\x01H!\x88\x01\x01\x12\x14\n\x07\x65mis_qy\x18# \x01(\x01H\"\x88\x01\x01\x12\x15\n\x08temp_ems\x18$ \x01(\x01H#\x88\x01\x01\x12\x15\n\x08lifetime\x18% \x01(\x01H$\x88\x01\x01\x12\x14\n\x07temp_cv\x18& \x01(\x01H%\x88\x01\x01\x12\x16\n\treduc_pot\x18\' \x01(\x01H&\x88\x01\x01\x12\x18\n\x0bhw_or_pk_rp\x18( \x01(\tH\'\x88\x01\x01\x12\x15\n\x08oxid_pot\x18) \x01(\x01H(\x88\x01\x01\x12\x18\n\x0bhw_or_pk_op\x18* \x01(\tH)\x88\x01\x01\x12\x17\n\nsolvent_cv\x18+ \x01(\tH*\x88\x01\x01\x12\x18\n\x0b\x65lectrolyte\x18, \x01(\tH+\x88\x01\x01\x12\x18\n\x0bref_electrd\x18- \x01(\tH,\x88\x01\x01\x12\x18\n\x0binter_thngs\x18. \x01(\tH-\x88\x01\x01\x12\x17\n\ndensity_20\x18/ \x01(\x01H.\x88\x01\x01\x12\x1e\n\x11\x64\x65nsity_20_source\x18\x30 \x01(\tH/\x88\x01\x01\x12\x1f\n\x12\x64\x65\x66\x61ult_warn_level\x18\x31 \x01(\x01H0\x88\x01\x01\x12\x11\n\x04n_20\x18\x32 \x01(\x01H1\x88\x01\x01\x12\x18\n\x0bn_20_source\x18\x33 \x01(\tH2\x88\x01\x01\x12\x13\n\x06mp_low\x18\x34 \x01(\x01H3\x88\x01\x01\x12\x14\n\x07mp_high\x18\x35 \x01(\x01H4\x88\x01\x01\x12\x16\n\tmp_source\x18\x36 \x01(\tH5\x88\x01\x01\x12\x13\n\x06\x62p_low\x18\x37 \x01(\x01H6\x88\x01\x01\x12\x14\n\x07\x62p_high\x18\x38 \x01(\x01H7\x88\x01\x01\x12\x15\n\x08\x62p_press\x18\x39 \x01(\x01H8\x88\x01\x01\x12\x17\n\npress_unit\x18: \x01(\tH9\x88\x01\x01\x12\x16\n\tbp_source\x18; \x01(\tH:\x88\x01\x01\x12\x15\n\x08safety_r\x18< \x01(\tH;\x88\x01\x01\x12\x15\n\x08safety_h\x18= \x01(\tH<\x88\x01\x01\x12\x15\n\x08safety_s\x18> \x01(\tH=\x88\x01\x01\x12\x15\n\x08safety_p\x18? \x01(\tH>\x88\x01\x01\x12\x18\n\x0bsafety_text\x18@ \x01(\tH?\x88\x01\x01\x12\x17\n\nsafety_sym\x18\x41 \x01(\tH@\x88\x01\x01\x12\x1b\n\x0esafety_sym_ghs\x18\x42 \x01(\tHA\x88\x01\x01\x12\x1a\n\rsafety_source\x18\x43 \x01(\tHB\x88\x01\x01\x12\x18\n\x0b\x63omment_mol\x18\x44 \x01(\tHC\x88\x01\x01\x42\t\n\x07_mol_idB\t\n\x07_cas_nrB\t\n\x07_smilesB\x10\n\x0e_smiles_stereoB\x08\n\x06_inchiB\x16\n\x14_molfile_blob_sourceB\x0e\n\x0c_emp_formulaB\x13\n\x11_emp_formula_sortB\x15\n\x13_emp_formula_sourceB\x05\n\x03_mwB\r\n\x0b_mw_monoisoB\x06\n\x04_rdbB\x0c\n\n_mw_sourceB\x0f\n\r_validated_byB\n\n\x08_journalB\x0f\n\r_auth_of_intrB\x0b\n\t_jour_citB\x0c\n\n_year_publB\x0b\n\t_doi_linkB\r\n\x0b_comp_classB\x08\n\x06_cuniqB\x0c\n\n_calc_perfB\n\n\x08_org_metB\x0b\n\t_mol_chrgB\x0e\n\x0c_state_ofmatB\x0e\n\x0c_color_whiteB\x0b\n\t_color_uvB\r\n\x0b_absorb_maxB\r\n\x0b_solvent_aeB\t\n\x07_absorbB\x07\n\x05_concB\t\n\x07_extincB\x0b\n\t_emis_maxB\x0b\n\t_temp_absB\n\n\x08_emis_qyB\x0b\n\t_temp_emsB\x0b\n\t_lifetimeB\n\n\x08_temp_cvB\x0c\n\n_reduc_potB\x0e\n\x0c_hw_or_pk_rpB\x0b\n\t_oxid_potB\x0e\n\x0c_hw_or_pk_opB\r\n\x0b_solvent_cvB\x0e\n\x0c_electrolyteB\x0e\n\x0c_ref_electrdB\x0e\n\x0c_inter_thngsB\r\n\x0b_density_20B\x14\n\x12_density_20_sourceB\x15\n\x13_default_warn_levelB\x07\n\x05_n_20B\x0e\n\x0c_n_20_sourceB\t\n\x07_mp_lowB\n\n\x08_mp_highB\x0c\n\n_mp_sourceB\t\n\x07_bp_lowB\n\n\x08_bp_highB\x0b\n\t_bp_pressB\r\n\x0b_press_unitB\x0c\n\n_bp_sourceB\x0b\n\t_safety_rB\x0b\n\t_safety_hB\x0b\n\t_safety_sB\x0b\n\t_safety_pB\x0e\n\x0c_safety_textB\r\n\x0b_safety_symB\x11\n\x0f_safety_sym_ghsB\x10\n\x0e_safety_sourceB\x0e\n\x0c_comment_mol\"=\n\x15\x43reateMoleculeRequest\x12$\n\x08molecule\x18\x01 \x01(\x0b\x32\x12.molecule.Molecule\">\n\x16\x43reateMoleculeResponse\x12$\n\x08molecule\x18\x01 \x01(\x0b\x32\x12.molecule.Molecule\"!\n\x13ReadMoleculeRequest\x12\n\n\x02id\x18\x01 \x01(\t\"<\n\x14ReadMoleculeResponse\x12$\n\x08molecule\x18\x01 \x01(\x0b\x32\x12.molecule.Molecule\"=\n\x15UpdateMoleculeRequest\x12$\n\x08molecule\x18\x01 \x01(\x0b\x32\x12.molecule.Molecule\">\n\x16UpdateMoleculeResponse\x12$\n\x08molecule\x18\x01 \x01(\x0b\x32\x12.molecule.Molecule\",\n\x15\x44\x65leteMoleculeRequest\x12\x13\n\x0bmolecule_id\x18\x01 \x01(\t\"-\n\x16\x44\x65leteMoleculeResponse\x12\x13\n\x0bmolecule_id\x18\x01 \x01(\t\"\x15\n\x13ListMoleculeRequest\"<\n\x14ListMoleculeResponse\x12$\n\x08molecule\x18\x01 \x01(\x0b\x32\x12.molecule.Molecule\"\x14\n\x12GetMoleculeRequest2\x80\x04\n\x0fMoleculeService\x12U\n\x0e\x43reateMolecule\x12\x1f.molecule.CreateMoleculeRequest\x1a .molecule.CreateMoleculeResponse\"\x00\x12O\n\x0cReadMolecule\x12\x1d.molecule.ReadMoleculeRequest\x1a\x1e.molecule.ReadMoleculeResponse\"\x00\x12U\n\x0eUpdateMolecule\x12\x1f.molecule.UpdateMoleculeRequest\x1a .molecule.UpdateMoleculeResponse\"\x00\x12U\n\x0e\x44\x65leteMolecule\x12\x1f.molecule.DeleteMoleculeRequest\x1a .molecule.DeleteMoleculeResponse\"\x00\x12O\n\x0cListMolecule\x12\x1d.molecule.ListMoleculeRequest\x1a\x1e.molecule.ListMoleculeResponse\"\x00\x12\x46\n\x0bGetMolecule\x12\x1c.molecule.GetMoleculeRequest\x1a\x17.google.protobuf.Struct\"\x00\x62\x06proto3')
+DESCRIPTOR = _descriptor_pool.Default().AddSerializedFile(b'\n\x0emolecule.proto\x12\x08molecule\x1a\x1cgoogle/protobuf/struct.proto\"\x8a\x01\n\x08Molecule\x12\x0f\n\x02id\x18\x01 \x01(\tH\x00\x88\x01\x01\x12\x10\n\x03\x64oi\x18\x02 \x01(\tH\x01\x88\x01\x01\x12\x1b\n\x0epublished_date\x18\x03 \x01(\tH\x02\x88\x01\x01\x12\x12\n\x05title\x18\x04 \x01(\tH\x03\x88\x01\x01\x42\x05\n\x03_idB\x06\n\x04_doiB\x11\n\x0f_published_dateB\x08\n\x06_title\"=\n\x15\x43reateMoleculeRequest\x12$\n\x08molecule\x18\x01 \x01(\x0b\x32\x12.molecule.Molecule\">\n\x16\x43reateMoleculeResponse\x12$\n\x08molecule\x18\x01 \x01(\x0b\x32\x12.molecule.Molecule\"!\n\x13ReadMoleculeRequest\x12\n\n\x02id\x18\x01 \x01(\t\"<\n\x14ReadMoleculeResponse\x12$\n\x08molecule\x18\x01 \x01(\x0b\x32\x12.molecule.Molecule\"=\n\x15UpdateMoleculeRequest\x12$\n\x08molecule\x18\x01 \x01(\x0b\x32\x12.molecule.Molecule\">\n\x16UpdateMoleculeResponse\x12$\n\x08molecule\x18\x01 \x01(\x0b\x32\x12.molecule.Molecule\",\n\x15\x44\x65leteMoleculeRequest\x12\x13\n\x0bmolecule_id\x18\x01 \x01(\t\"-\n\x16\x44\x65leteMoleculeResponse\x12\x13\n\x0bmolecule_id\x18\x01 \x01(\t\"\x15\n\x13ListMoleculeRequest\"<\n\x14ListMoleculeResponse\x12$\n\x08molecule\x18\x01 \x01(\x0b\x32\x12.molecule.Molecule\"\x14\n\x12GetMoleculeRequest2\x80\x04\n\x0fMoleculeService\x12U\n\x0e\x43reateMolecule\x12\x1f.molecule.CreateMoleculeRequest\x1a .molecule.CreateMoleculeResponse\"\x00\x12O\n\x0cReadMolecule\x12\x1d.molecule.ReadMoleculeRequest\x1a\x1e.molecule.ReadMoleculeResponse\"\x00\x12U\n\x0eUpdateMolecule\x12\x1f.molecule.UpdateMoleculeRequest\x1a .molecule.UpdateMoleculeResponse\"\x00\x12U\n\x0e\x44\x65leteMolecule\x12\x1f.molecule.DeleteMoleculeRequest\x1a .molecule.DeleteMoleculeResponse\"\x00\x12O\n\x0cListMolecule\x12\x1d.molecule.ListMoleculeRequest\x1a\x1e.molecule.ListMoleculeResponse\"\x00\x12\x46\n\x0bGetMolecule\x12\x1c.molecule.GetMoleculeRequest\x1a\x17.google.protobuf.Struct\"\x00\x62\x06proto3')
 
 
 
@@ -120,29 +120,29 @@ if _descriptor._USE_C_DESCRIPTORS == False:
 
   DESCRIPTOR._options = None
   _MOLECULE._serialized_start=59
-  _MOLECULE._serialized_end=2681
-  _CREATEMOLECULEREQUEST._serialized_start=2683
-  _CREATEMOLECULEREQUEST._serialized_end=2744
-  _CREATEMOLECULERESPONSE._serialized_start=2746
-  _CREATEMOLECULERESPONSE._serialized_end=2808
-  _READMOLECULEREQUEST._serialized_start=2810
-  _READMOLECULEREQUEST._serialized_end=2843
-  _READMOLECULERESPONSE._serialized_start=2845
-  _READMOLECULERESPONSE._serialized_end=2905
-  _UPDATEMOLECULEREQUEST._serialized_start=2907
-  _UPDATEMOLECULEREQUEST._serialized_end=2968
-  _UPDATEMOLECULERESPONSE._serialized_start=2970
-  _UPDATEMOLECULERESPONSE._serialized_end=3032
-  _DELETEMOLECULEREQUEST._serialized_start=3034
-  _DELETEMOLECULEREQUEST._serialized_end=3078
-  _DELETEMOLECULERESPONSE._serialized_start=3080
-  _DELETEMOLECULERESPONSE._serialized_end=3125
-  _LISTMOLECULEREQUEST._serialized_start=3127
-  _LISTMOLECULEREQUEST._serialized_end=3148
-  _LISTMOLECULERESPONSE._serialized_start=3150
-  _LISTMOLECULERESPONSE._serialized_end=3210
-  _GETMOLECULEREQUEST._serialized_start=3212
-  _GETMOLECULEREQUEST._serialized_end=3232
-  _MOLECULESERVICE._serialized_start=3235
-  _MOLECULESERVICE._serialized_end=3747
+  _MOLECULE._serialized_end=197
+  _CREATEMOLECULEREQUEST._serialized_start=199
+  _CREATEMOLECULEREQUEST._serialized_end=260
+  _CREATEMOLECULERESPONSE._serialized_start=262
+  _CREATEMOLECULERESPONSE._serialized_end=324
+  _READMOLECULEREQUEST._serialized_start=326
+  _READMOLECULEREQUEST._serialized_end=359
+  _READMOLECULERESPONSE._serialized_start=361
+  _READMOLECULERESPONSE._serialized_end=421
+  _UPDATEMOLECULEREQUEST._serialized_start=423
+  _UPDATEMOLECULEREQUEST._serialized_end=484
+  _UPDATEMOLECULERESPONSE._serialized_start=486
+  _UPDATEMOLECULERESPONSE._serialized_end=548
+  _DELETEMOLECULEREQUEST._serialized_start=550
+  _DELETEMOLECULEREQUEST._serialized_end=594
+  _DELETEMOLECULERESPONSE._serialized_start=596
+  _DELETEMOLECULERESPONSE._serialized_end=641
+  _LISTMOLECULEREQUEST._serialized_start=643
+  _LISTMOLECULEREQUEST._serialized_end=664
+  _LISTMOLECULERESPONSE._serialized_start=666
+  _LISTMOLECULERESPONSE._serialized_end=726
+  _GETMOLECULEREQUEST._serialized_start=728
+  _GETMOLECULEREQUEST._serialized_end=748
+  _MOLECULESERVICE._serialized_start=751
+  _MOLECULESERVICE._serialized_end=1263
 # @@protoc_insertion_point(module_scope)
