@@ -17,12 +17,13 @@ import org.bson.Document;
 public class MoleculeImplAdv extends MoleculeServiceImplBase {
 
   // Mongo Instance connection string
-  MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
+  MongoClient mongoClient = MongoClients.create("mongodb://root:indiana@149.165.159.151:27017");
+  //MongoClient mongoClient = MongoClients.create("mongodb://localhost:27017");
   // MongoDB Database name
   MongoDatabase mongoDatabase = mongoClient.getDatabase("Indiana");
   // MongoDB Collection name
   MongoCollection<Document> mongoCollection = mongoDatabase.getCollection(
-    "chemData"
+    "chemDataExtract"
   );
 
   List<Document> moleculeList = mongoCollection

@@ -20,7 +20,7 @@
 2. Open a new terminal window (server_runner) and change the directory to the
    server codebase
    ```commandline
-   cd ~/airavata-sandbox/gsoc2022/smilesdb/Server/
+   cd ~/airavata-sandbox/gsoc2022/chemData/Server/
    ```
 3. Build the Maven project.
    ```commandline
@@ -29,7 +29,7 @@
    ```
 4. Run the Spring Boot application.
    ```commandline
-   mvn spring-boot:run
+   mvn compile spring-boot:run
    ```
    On successful running of the server application, it shows a message as
    _"Server running successfully"_ and open connection with mongodb driver.
@@ -40,7 +40,7 @@ Open a new terminal window and follow the steps to run the middleware applicatio
 
 1. Change the working directory to SMILES middleware.
    ```commandline
-   cd ~/airavata-sandbox/gsoc2022/smilesdb/rpc_handler
+   cd ~/airavata-sandbox/gsoc2022/chemData/rpc_handler
    ```
 2. Create a virtual environment using the following command. <br/>
    Strictly recommended to use Python version 3.8.3 to build the **grpcio-wheel**.
@@ -67,7 +67,7 @@ To run the client application, open a new terminal window and follow the below s
 
 1. Change the working directory to SMILES Dashboard.
    ```commandline
-   cd ~/airavata-sandbox/gsoc2022/smilesdb/data-catalog
+   cd ~/airavata-sandbox/gsoc2022/chemData/data-catalog
    ```
 2. Open the new terminal and run the following commands to build the project.
    ```commandline

@@ -56,8 +56,8 @@ function createJSMEWindow(){
 }
 function createMol3DWindow(){
   const Mol3DWindow = new BrowserWindow({
-    width: 800,
-    height: 600,
+    width: 1400,
+    height: 800,
     webPreferences: {
       preload: path.join(__dirname, 'preload.js')
     }
@@ -94,19 +94,38 @@ function createVMD(){
   if(os.platform == 'win32')
     var executablePath = 'C:\\Program Files\\VMD\\vmd.exe';
   else
-    var executablePath = homedir + '/Applications/vmd';
+    var executablePath = homedir + '/Applications/vmdelectron';
   child(executablePath, function (err, data) {
       console.log(err)
       console.log(data.toString());
   });
 }
+function createGaussView(){
+  var homedir = process.env.HOME;
+  if(os.platform == 'win32')
+    var executablePath = 'C:\\Program Files\\GaussView\\GaussView.exe';
+  else
+  {
+    //var homedir = process.env.HOME;
+    var executablePath = homedir + '/Documents/Professional/Applications/Gaussian_Minwei/gv/gview.sh';
+      let spawn = require("child_process").spawn;
+      const process = spawn('bash', [executablePath]);
+      process.on('exit', (code) => {
+        console.log("Child exited");
+      });
+  }
+  //child(executablePath, function (err, data) {
+  //    console.log(err)
+  //    console.log(data.toString());
+  //});
+}
 function createMultiwfn(){
   var homedir = process.env.HOME;
-  const { spawn } = require('node:child_process');
+  //const { spawn } = require('node:child_process');
 
   if(os.platform == 'win32')
   {
-  
+
   const bat = spawn('cmd.exe', ['/c', 'test.bat']);
   bat.stdout.on('data', (data) => {
   console.log(data.toString());
@@ -121,12 +140,15 @@ function createMultiwfn(){
   });
   }
   else{
-    var executablePath = homedir + '/Applications/Multiwfn_3.7_src_Mac/Multiwfn';
-    child(executablePath, function (err, data) {
-      console.log("error")
-      console.log(err)
-      console.log(data.toString());
-  });
+
+      var executablePath = homedir + '/Applications/runMultiwfn.sh';
+      //var executablePath = homedir + '/Applications/Multiwfn_3.7_src_Mac/Multiwfn';
+      var wfnargs = '/Users/spamidig/Applications/Multiwfn_3.7_bin_Mac/examples/benzene.wfn < /Users/spamidig/Applications/airavata-sandbox/gsoc2022/seagrid-rich-client/ins.txt';
+      let spawn = require("child_process").spawn;
+      const process = spawn('bash', [executablePath]);
+      process.on('exit', (code) => {
+        console.log("Child exited");
+      });
 
   }
   
@@ -194,14 +216,14 @@ app.whenReady().then(() => {
   menu.splice(3,0,{
     label: 'Create Experiment',
     submenu: [
-      {
+      {   
         label: 'Gaussian 16',
         click: (item, focusedWindow) => {
           templateinput()
-        }
-      }
-    ]
-  });
+        }   
+      }   
+    ]   
+  }); 
   menu.splice(4,0,{
     label: 'External Applications',
     submenu: [
@@ -215,6 +237,12 @@ app.whenReady().then(() => {
         label: 'VMD',
         click: (item, focusedWindow) => {
           createVMD()
+        }
+      },
+      {
+        label: 'GaussView',
+        click: (item, focusedWindow) => {
+          createGaussView()
         }
       },
       {
@@ -238,4 +266,4 @@ app.on('window-all-closed', function () {
   if (process.platform !== 'darwin') app.quit()
 })
 
-///Users/spamidig/Applications/Multiwfn_3.7_src_Mac/Multiwfn /Users/spamidig/Applications/Multiwfn_3.7_bin_Mac/examples/benzene.wfn < ins.txt
+///Users/spamidig/Applications/Multiwfn_3.7_src_Mac/Multiwfn /Users/spamidig/Appli    cations/Multiwfn_3.7_bin_Mac/examples/benzene.wfn < ins.txt
